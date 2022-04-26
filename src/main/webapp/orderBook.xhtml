@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+  <link rel="stylesheet" href="styles.css"/>
+</h:head>
+<h:body>
+    <h1>Book selection</h1>
+    <ui:repeat value="#{booksForReader.authorList}" var="author">
+        <h2>#{author.name}</h2>
+        <ui:repeat value="#{author.books}" var="book">
+            <ol>
+                #{book.id} - #{book.name}
+            </ol>
+        </ui:repeat>
+    </ui:repeat>
+    <h:form>
+        <h:inputText hint="Input book ID" value="#{booksForReader.bookId}"/>
+        <h:commandButton value="Order" action="#{booksForReader.createOrder()}">
+            <f:param name="readerId" value="#{booksForReader.reader.id}" />
+        </h:commandButton>
+    </h:form>
+    <h:outputText value="#{booksForReader.result}"/>
+    <h:link outcome="readers" value="Back to readers page"/>
+</h:body>
+</html>

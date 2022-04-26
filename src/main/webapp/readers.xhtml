@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+>
+<h:head>
+  <link rel="stylesheet" href="styles.css"/>
+</h:head>
+<h:body>
+    <h1>Readers:</h1>
+    <ol>
+        <ui:repeat value="#{readers.readerList}" var="reader">
+            <li>
+                <h:link value="#{reader.name}" outcome="orderBook?readerId=#{reader.id}"/>
+                Books owned: #{reader.books.size() }
+            </li>
+        </ui:repeat>
+    </ol>
+    <h:form>
+        <h:inputText value="#{readers.readerToCreate.name}" required="true"/>
+        <h:commandButton value="Register new reader" actionListener="#{readers.createUser}"
+                         action="readers?faces-redirect=true"/>
+    </h:form>
+</h:body>
+<h:link outcome="index" value="Back to authors page"/>
+</html>

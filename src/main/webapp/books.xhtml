@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:a="http://xmlns.jcp.org/jsf/passthrough"
+      xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    <link rel="stylesheet" href="styles.css"/>
+</h:head>
+<h:body>
+    <h1>
+        Books released by #{booksForAuthor.author.name}:
+    </h1>
+    <ol>
+        <ui:repeat value="#{booksForAuthor.author.books}" var="book">
+            <li>
+                <h:link value="#{book.name}" outcome="bookDetails?bookId=#{book.id}"/>
+            </li>
+        </ui:repeat>
+    </ol>
+    <h:form>
+        <h:inputText a:placeholder="name" value="#{booksForAuthor.bookToCreate.name}" required="true"/>
+        <h:commandButton value="Add book to the author"
+                         actionListener="#{booksForAuthor.createBook}"
+                         action="#{'books?faces-redirect=true&amp;authorId='.concat(booksForAuthors.author.id)}">
+            <f:param name="authorId" value="#{booksForAuthor.author.id}"/>
+        </h:commandButton>
+    </h:form>
+    <h:link outcome="index" value="Back to authors page"/>
+</h:body>
+</html>
