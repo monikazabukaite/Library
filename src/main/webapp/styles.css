@@ -1,35 +1,32 @@
 body {
-    background: #E8DED1;
+    background: #D1C0A8;
 }
 
 h1 {
     text-align: center;
     background: #D1C0A8;
-    border: double white 2px;
-    font-family: 'Playfair Display';
+    border: double white 3px;
+    font-family: "Times New Roman", Times, serif;
 }
 
 h2 {
     text-align: center;
-    background: #A0816C;
-    border: solid black 1px;
-    font-family: 'Playfair Display';
+    background: #D1C0A8;
+    font-family: "Times New Roman", Times, serif;
 }
 
  li {
      margin-top: 10px;
      text-align: center;
-     font-size: 20pt;
-     border: double black 1px;
-     background: #A0816C;
-     font-family: 'Playfair Display';
+     font-size: 15pt;
+     background: white;
+     font-family: "Times New Roman", Times, serif;
  }
 
 ol {
     text-align: center;
-    font-size: 20pt;
-    border: solid black 1px;
-    font-family: 'Playfair Display';
+    font-size: 15pt;
+    font-family: "Times New Roman", Times, serif;
     background: beige;
     margin: 5px;
     padding: 1px;

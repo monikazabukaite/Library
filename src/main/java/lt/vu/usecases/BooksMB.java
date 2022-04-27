@@ -1,4 +1,4 @@
-package lt.vu.controllers;
+package lt.vu.usecases;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -33,8 +33,8 @@ public class BooksMB {
     }
 
     @Transactional
-    public String createGame() {
+    public String createBook() {
         bookMapper.insert(bookToCreate);
-        return "/allGames?faces-redirect=true";
+        return "/allBooks?faces-redirect=true";
     }
 }

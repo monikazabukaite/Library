@@ -1,4 +1,4 @@
-package lt.vu.controllers;
+package lt.vu.usecases;
 
 import lombok.Getter;
 import lombok.Setter;
