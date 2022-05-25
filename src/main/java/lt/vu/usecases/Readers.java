@@ -10,9 +10,14 @@ import javax.enterprise.inject.Model;
 import javax.inject.Inject;
 import javax.transaction.Transactional;
 import java.util.List;
+import javax.enterprise.context.SessionScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
+import java.io.Serializable;
 
+@ViewScoped
 @Model
-public class Readers {
+public class Readers implements Serializable {
 
     @Inject
     private ReadersDAO readersDAO;

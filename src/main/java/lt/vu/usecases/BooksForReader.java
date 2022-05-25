@@ -5,7 +5,7 @@ import lombok.Setter;
 import lt.vu.entities.Book;
 import lt.vu.entities.Author;
 import lt.vu.entities.Reader;
-import lt.vu.dao.BooksDAO;
+import lt.vu.dao.interfaces.BooksDAO;
 import lt.vu.dao.AuthorDAO;
 import lt.vu.dao.ReadersDAO;
 

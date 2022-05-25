@@ -29,6 +29,8 @@
             </ui:repeat>
         </ol>
     </h:form>
-    <h:link outcome="index" value="Back to home page"/>
+    <h:form><h:commandButton actionListener="#{updateBookDetails.createLock}" value="Check if task is finished"/></h:form>
+    <h:link outcome="index" value="Back to home page" />
+    <h:outputText value="Šiuo metu VU IS sistema yra užimta. Apdorojama kito studento užklausa. Bandykite dar kartą." rendered="#{param['error'] == 'optimistic-lock-exception'}" />
 </h:body>
 </html>

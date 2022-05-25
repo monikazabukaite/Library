@@ -2,7 +2,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets" xmlns:f="http://java.sun.com/jsf/core"
 >
 <h:head>
   <link rel="stylesheet" href="styles.css"/>
@@ -21,6 +21,14 @@
         <h:inputText value="#{authors.authorToCreate.name}" required="true" />
         <h:commandButton value="Add new author" actionListener="#{authors.createAuthor}" action="index?faces-redirect=true"/>
     </h:form>
-    <h:link outcome="readers" value="See all book readers"/>
+    <h:link outcome="readers" value="See all book readers"/> <br/>
+    <h:link outcome="allBooks" value="See all books"/><br/>
+    <h:form>
+        <h:commandButton actionListener="#{publishers.startLongTask}" value="Start long task">
+        </h:commandButton>
+        <h:commandButton actionListener="#{publishers.checkIfOver}" value="Check if task is finished">
+        </h:commandButton>
+        <h:outputText value="#{authors.checkIfOver()}"/>
+    </h:form>
 </h:body>
 </html>

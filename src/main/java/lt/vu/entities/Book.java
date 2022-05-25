@@ -56,4 +56,16 @@ public class Book implements Serializable {
     public int hashCode() {
         return Objects.hash(id, name);
     }
+
+    @Override
+    public String toString() {
+        return "Book{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
+                ", author=" + author +
+                ", readers=" + readers +
+                ", version=" + version +
+                '}';
+    }
 }

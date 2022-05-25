@@ -3,7 +3,8 @@ package lt.vu.usecases;
 import lombok.Getter;
 import lombok.Setter;
 import lt.vu.dao.AuthorDAO;
-import lt.vu.dao.BooksDAO;
+import lt.vu.dao.BooksDaoImpl;
+import lt.vu.dao.interfaces.BooksDAO;
 import lt.vu.entities.Author;
 import lt.vu.entities.Book;
 
